@@ -12,7 +12,7 @@ private:
 };
 void Month::input()
 {
-	while (m_ == 0)
+	while (true)
 	{
 		cout << "ŒŽ‚ð“ü—Í‚µ‚Ä‚­‚¾‚³‚¢(1‚©‚ç12‚Ü‚Å)F";
 		cin >> m_;
