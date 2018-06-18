@@ -1,17 +1,28 @@
 #include <iostream>
-using namespace std;
-int CalcArea(int w, int h) 
+#include <exception>
+int F(const int w, const int h)
 {
+	//0以下
+	if (w < 0 || h < 0)
+	{
+		throw "辺がマイナスになっています";
+	}
 	return w * h;
 }
 int main()
 {
 	int w, h;
-	cin >> w >> h;
-	auto area = CalcArea(w, h);
-	cout << "面積は" << area << endl;
+	std::cin >> w >> h;
+	try
+	{
+		auto total = F(w, h);
+		std::cout << "面積は" << total << std::endl;
+	}
+	catch (const char* errormsg)
+	{
+		std::cout << errormsg;
+	}
+
+	//std::exception& e　で行う場合　what()を使用する
 	system("pause");
 }
-//|=============================|//
-//|マイナスの場合に例外が発生する  |//
-//|=============================|//
